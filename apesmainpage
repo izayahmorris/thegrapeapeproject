@@ -1,0 +1,1077 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> THE GRAPE APE!!!! </title>
+    <style>
+        :root {
+            --color-primary: #E6E6FA;
+            --color-primary-hover: #F0FFF0;
+            --color-secondary: #696969;
+            --color-text: #7FFFD4;
+            --color-text-light: #7FFFD4;
+            --color-bg: #00008B;
+            --color-surface: #000000;
+            --color-border: #000000;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            line-height: 1.6;
+            color: var(--color-text);
+            background-color: var(--color-bg);
+        }
+
+        /* Navigation */
+        nav {
+            background-color: var(--color-surface);
+            border-bottom: 1px solid var(--color-border);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-brand {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--color-primary);
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--color-text);
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--color-secondary);
+        }
+
+        /* Back Button */
+        .back-link {
+            display: inline-block;
+            margin-bottom: 2rem;
+            color: var(--color-secondary);
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s ease;
+        }
+
+        .back-link:hover {
+            color: var(--color-primary);
+        }
+
+        /* Hero Section */
+        .project-hero {
+            background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 100%);
+            color: white;
+            padding: 4rem 2rem;
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .hero-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .project-hero h1 {
+            font-size: 3rem;
+            margin-bottom: 0.5rem;
+            font-weight: 700;
+        }
+
+        .project-meta {
+            font-size: 1.1rem;
+            opacity: 0.95;
+            margin-bottom: 1rem;
+        }
+
+        .project-tags {
+            display: flex;
+            gap: 0.5rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .tag {
+            background-color: rgba(255, 255, 255, 0.2);
+            padding: 0.4rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+        }
+
+        /* Main Content */
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .hero-image {
+            width: 100%;
+            max-height: 500px;
+            object-fit: cover;
+            border-radius: 12px;
+            margin-bottom: 3rem;
+            border: 2px solid var(--color-secondary);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Inline Images */
+        .section-image {
+            width: 100%;
+            max-height: 400px;
+            object-fit: cover;
+            border-radius: 12px;
+            margin: 2rem 0;
+            border: 2px solid var(--color-secondary);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        }
+
+        .image-caption {
+            text-align: center;
+            font-size: 0.9rem;
+            color: var(--color-text-light);
+            margin-top: 0.5rem;
+            font-style: italic;
+        }
+
+        /* Two Column Layout with Image */
+        .content-with-image {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            align-items: center;
+            margin-bottom: 2rem;
+        }
+
+        .content-text {
+            background-color: var(--color-surface);
+            padding: 1.5rem;
+            border-radius: 12px;
+            border: 1px solid var(--color-border);
+        }
+
+        /* Section Styling */
+        .section {
+            margin-bottom: 3rem;
+        }
+
+        .section-title {
+            font-size: 2rem;
+            color: var(--color-primary);
+            margin-bottom: 1.5rem;
+            padding-bottom: 1rem;
+            border-bottom: 2px solid var(--color-secondary);
+        }
+
+        .section-subtitle {
+            font-size: 1.3rem;
+            color: var(--color-primary);
+            margin-top: 1.5rem;
+            margin-bottom: 1rem;
+            font-weight: 600;
+            border-bottom: 2px solid var(--color-secondary);
+        }
+
+        p {
+            margin-bottom: 1rem;
+            line-height: 1.8;
+            color: var(--color-text-light);
+        }
+
+        ul, ol {
+            margin-left: 2rem;
+            margin-bottom: 1.5rem;
+        }
+
+        li {
+            margin-bottom: 0.5rem;
+            color: var(--color-text-light);
+        }
+
+        /* Two Column Layout */
+        .two-column {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .column {
+            background-color: var(--color-surface);
+            padding: 1.5rem;
+            border-radius: 12px;
+            border: 1px solid var(--color-border);
+        }
+
+        .column h3 {
+            color: var(--color-primary);
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+        }
+
+        /* Specs Grid */
+        .specs-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .spec-card {
+            background-color: var(--color-surface);
+            padding: 1.5rem;
+            border-radius: 12px;
+            border: 1px solid var(--color-border);
+        }
+
+        .spec-card h4 {
+            color: var(--color-secondary);
+            font-size: 1rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .spec-value {
+            font-weight: 600;
+            color: var(--color-primary);
+            font-size: 1.1rem;
+        }
+
+        /* Results/Outcomes */
+        .results-box {
+            background-color: var(--color-surface);
+            padding: 2rem;
+            border-radius: 12px;
+            border-left: 4px solid var(--color-secondary);
+            margin-bottom: 2rem;
+        }
+
+        .results-box h3 {
+            color: var(--color-primary);
+            margin-bottom: 1rem;
+        }
+
+        /* Lessons Learned */
+        .lesson-card {
+            background-color: var(--color-surface);
+            padding: 1.5rem;
+            border-radius: 12px;
+            border: 1px solid var(--color-border);
+            margin-bottom: 1rem;
+        }
+
+        .lesson-card h4 {
+            color: var(--color-primary);
+            margin-bottom: 0.5rem;
+        }
+
+        /* Frequency Table */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1.5rem 0;
+            background-color: var(--color-surface);
+            border: 1px solid var(--color-border);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        th {
+            background-color: var(--color-secondary);
+            color: dark grey;
+            padding: 1rem;
+            text-align: left;
+            font-weight: 600;
+        }
+
+        td {
+            padding: 0.75rem 1rem;
+            border-bottom: 1px solid var(--color-border);
+            color: var(--color-text-light);
+        }
+
+        tr:hover {
+            background-color: rgba(80, 164, 160, 0.05);
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--color-secondary);
+            color: dark grey;
+            text-align: center;
+            padding: 2rem;
+            margin-top: 4rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .project-hero h1 {
+                font-size: 2rem;
+            }
+
+            .two-column {
+                grid-template-columns: 1fr;
+            }
+
+            .content-with-image {
+                grid-template-columns: 1fr;
+            }
+
+            .section-title {
+                font-size: 1.5rem;
+            }
+
+            .specs-grid {
+                grid-template-columns: 1fr;
+            }
+
+            table {
+                font-size: 0.9rem;
+            }
+
+            td, th {
+                padding: 0.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <a href="index.html" class="nav-brand">Izayah's Portfolio</a>
+            <ul class="nav-links">
+                <li><a href="index.html#home">Home</a></li>
+                <li><a href="index.html#about">About</a></li>
+                <li><a href="index.html#projects">Projects</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Back Link -->
+    <div class="container" style="margin-top: 2rem;">
+        <a href="index.html#projects" class="back-link">← Back to Projects</a>
+    </div>
+
+    <!-- Project Hero -->
+    <section class="project-hero">
+        <div class="hero-content">
+            <h1>Single DOF Compliant Mechanism</h1>
+            <p class="project-meta">Frequency-tuned mechanical oscillators for train-based energy harvesting applications</p>
+            <div class="project-tags">
+                <span class="tag">Compliant Mechanisms</span>
+                <span class="tag">Mechanical Design</span>
+                <span class="tag">MATLAB</span>
+                <span class="tag">Arduino</span>
+                <span class="tag">Experimental Testing</span>
+                <span class="tag">Laser Fabrication</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <div class="container">
+
+        <!-- HERO IMAGE LOCATION #1 -->
+    <div style="display: flex; flex-direction: column; align-items: center; margin-bottom: 3rem;">
+        <img src="EMEH-Assembly.png" alt="Assembly of EMEH Apparatus"
+             style="width: 750px; height: 600px; object-fit: cover; border-radius: 12px; box-shadow: 0 4px 8px rgba(0,0,0,0.3);">
+        <p class="image-caption" style="max-width: 750px;">Figure: Assembly of EMEH Apparatus</p>
+    </div>
+
+        <!-- Project Overview -->
+        <section class="section">
+            <h2 class="section-title">Project Overview</h2>
+            <p>This project focuses on the design, analysis, and experimental validation of single degree-of-freedom (DOF) compliant mechanisms tuned to specific resonant frequencies. These mechanisms are engineered to respond optimally to train-based vibration excitation, with the goal of integrating them into electromagnetic energy harvesting systems that capture vibrational energy as trains pass nearby.</p>
+            <p><strong>Primary Application:</strong> Energy harvesting from train passage vibrations through frequency-matched mechanical oscillators</p>
+            <p><strong>Core Innovation:</strong> Parametric frequency design using pseudo rigid body (PRB) modeling, enabling rapid iteration to achieve target resonant frequencies (25, 35, 40, 60, 80 Hz)</p>
+            <p><strong>Design Methodology:</strong> Theoretical analysis combined with experimental validation, achieving strong correlation between analytical predictions and measured frequency response</p>
+        </section>
+
+        <!-- Design Theory -->
+        <section class="section">
+            <h2 class="section-title">Design Theory & Methodology</h2>
+            
+            <h3 class="section-subtitle">Pseudo Rigid Body Model (PRBM)</h3>
+            <p>The compliant mechanism design was based on the Pseudo Rigid Body Model (PRBM) methodology pioneered at Sandia National Laboratories and detailed in Larry Howell's comprehensive textbook on compliant mechanisms. This approach bridges the gap between traditional rigid body analysis and flexible mechanisms by modeling compliant elements as rigid links connected by torsional springs.</p>
+
+            <!-- IMAGE LOCATION #2: After PRBM explanation -->
+            <div style="display: flex; flex-direction: column; align-items: center; margin-bottom: 3rem;">
+                <img src="mechanism-prbm.png" alt="Pseudo Rigid Body Model schematic showing beam elements and spring connections" class="section-image"
+                    style="object-fit: contain; width: 700px; height: 650px; border-radius: 12px; border: 2px solid var(--color-secondary); box-shadow: 0 4px 8px rgba(0,0,0,0.3);">
+                <p class="image-caption">Figure: PRBM schematic showing rigid links and torsional spring elements</p>
+            </div>
+
+            <h3 class="section-subtitle">Analytical Stiffness Development</h3>
+            <p>The analytical model for the single DOF mechanism combines springs in parallel and series configurations, transitioning from torsional spring stiffness to linear (translational) spring stiffness for the end effector:</p>
+            <ul>
+                <li><strong>Spring Combination Rules:</strong> Springs in series (1/k_total = 1/k₁ + 1/k₂ + ...) and in parallel (k_total = k₁ + k₂ + ...)</li>
+                <li><strong>Torsional to Linear Conversion:</strong> k_linear = k_torsional / L², where L is the moment arm length</li>
+                <li><strong>Geometry-Specific Parameters:</strong> Stiffness derived from beam dimensions, material properties, and constraint topology</li>
+                <li><strong>Reference:</strong> Howell, L. L. (2001). Compliant Mechanisms. John Wiley & Sons.</li>
+            </ul>
+
+            <div class="results-box">
+                <h3>Fundamental Natural Frequency Equation</h3>
+                <p>The natural frequency of oscillation was made parametric through the equation:</p>
+                <p style="text-align: center; font-family: monospace; font-weight: 600;">f_n = (1/2π) × √(k/m_eff)</p>
+                <p>Where k is derived from geometry-specific parameters and m_eff is determined from geometry and material density. By manipulating beam geometry (width, length, thickness) and calculating the corresponding second moment of inertia (I), the required height h of the compliant element could be iteratively solved to achieve specified target frequencies.</p>
+            </div>
+        </section>
+
+        <!-- Analytical Development -->
+        <section class="section">
+            <h2 class="section-title">Analytical Model Development</h2>
+            
+            <h3 class="section-subtitle">Parametric Frequency Design Process</h3>
+            <p>A MATLAB-based iterative algorithm was developed to calculate mechanism dimensions required for each target frequency. The process involves:</p>
+            
+            <ol>
+                <li><strong>Define Target Frequencies:</strong> Specify desired resonant frequencies (25, 35, 40, 60, 80 Hz)</li>
+                <li><strong>Calculate Required Stiffness:</strong> Using f_n = (1/2π)√(k/m_eff), determine k needed for each frequency</li>
+                <li><strong>Determine Geometry:</strong> Using Howell's stiffness equations, solve for required beam dimensions</li>
+                <li><strong>Calculate Second Moment of Inertia:</strong> I = (width × height³)/12 for rectangular cross-sections</li>
+                <li><strong>Solve for Height Iteratively:</strong> Adjust height h until stiffness equation yields target frequency</li>
+                <li><strong>Validate Results:</strong> Calculate effective mass and verify natural frequency prediction</li>
+            </ol>
+
+            <h3 class="section-subtitle">MATLAB Implementation</h3>
+            <p>Custom MATLAB code was developed to automate the iterative frequency calculation for multiple target frequencies simultaneously. The algorithm:</p>
+            <ul>
+                <li>Calculates linear stiffness needed from mechanism for desired natrual frequency</li>
+                <li>Incorporates material properties (Delrin : E = 2.9 GPa, ρ = 1410-1420 kg/m³)</li>
+                <li>Generates geometry specifications for each frequency variant</li>
+                <li>Outputs cutting parameters compatible with laser cutter software</li>
+                <li>Provides predicted natural frequency for comparison with experimental results</li>
+            </ul>
+            
+        </section>
+
+        <!-- Fabrication -->
+        <section class="section">
+            <h2 class="section-title">Design & Fabrication</h2>
+            
+            <h3 class="section-subtitle">Laser Cutting Technology</h3>
+            <p>All compliant mechanism variants were fabricated using an <strong>Epilogue 60W Laser Cutter</strong>. This technology enables:</p>
+            <ul>
+                <li>High precision cutting of intricate beam geometries (±0.05 mm accuracy)</li>
+                <li>Rapid prototyping of multiple frequency variants without tooling costs</li>
+                <li>Capability to cut flexible materials (delrin, acrylic) with consistent edge quality</li>
+                <li>Ability to test design iterations quickly, supporting iterative refinement</li>
+            </ul>
+
+            <!-- IMAGE LOCATION #4: Laser cutter or fabricated mechanisms -->
+            <div style="display: flex; flex-direction: column; align-items: center; margin-bottom: 3rem;">
+                <img src="epilogue-laser.png" class="section-image"
+                    style="object-fit: contain; width: 500px; height: 500px; border-radius: 12px; border: 2px solid var(--color-secondary); box-shadow: 0 4px 8px rgba(0,0,0,0.3);">
+                <p class="image-caption">Figure: Epilogue 60W laser cutter fabricating compliant mechanisms</p>
+            </div>
+
+            <h3 class="section-subtitle">Mechanism Variants Fabricated</h3>
+            <p>Six frequency-specific mechanism variants were designed and manufactured:</p>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Mechanism ID</th>
+                        <th>Target Frequency (Hz)</th>
+                        <th>Analytical Prediction (Hz)</th>
+                        <th>Experimental Measurement (Hz)</th>
+                        <th>Frequency Deviation (Hz)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>M-25</td>
+                        <td>25</td>
+                        <td>25.0</td>
+                        <td>35.8</td>
+                        <td>10.8</td>
+                    </tr>
+                    <tr>
+                        <td>M-35</td>
+                        <td>35</td>
+                        <td>35.0</td>
+                        <td>43.5</td>
+                        <td>8.5</td>
+                    </tr>
+                    <tr>
+                        <td>M-40</td>
+                        <td>40</td>
+                        <td>40.0</td>
+                        <td>56.5</td>
+                        <td>16.5</td>
+                    </tr>
+                    <tr>
+                        <td>M-60</td>
+                        <td>60</td>
+                        <td>60.0</td>
+                        <td>68.7</td>
+                        <td>8.7</td>
+                    </tr>
+                    <tr>
+                        <td>M-80</td>
+                        <td>80</td>
+                        <td>80.0</td>
+                        <td>79.5</td>
+                        <td>-0.5</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <!-- IMAGE LOCATION #5: All fabricated mechanisms laid out together -->
+            <div style="display: flex; flex-direction: column; align-items: center; margin-bottom: 3rem;">
+                <div style="display: flex; flex-direction: column; align-items: center;">
+                    <img src="IMG_3939.JPG" class="section-image"
+                        style="object-fit: cover; width: 500px; height: 850px; border-radius: 12px; border: 2px solid var(--color-secondary); box-shadow: 0 4px 8px rgba(0,0,0,0.3);";>
+                    <p class="image-caption">Figure: All five frequency-tuned mechanism variants showing geometric scaling differences</p>
+                </div>
+            </div>
+
+            <div class="results-box">
+                <h3>Key Observation</h3>
+                <p>The 80 Hz mechanism showed exceptional correlation between analytical prediction and experimental measurement (deviation of only 0.5 Hz). This suggests the analytical model's accuracy improves at higher frequencies, possibly due to reduced influence of damping and manufacturing tolerances at frequencies near the upper end of the test range.</p>
+            </div>
+        </section>
+
+        <!-- Experimental Testing -->
+        <section class="section">
+            <h2 class="section-title">Experimental Testing & Validation</h2>
+            
+            <h3 class="section-subtitle">Dynamic Frequency Response Testing</h3>
+            <p>Experimental validation was conducted using a custom-built Arduino-based data acquisition system integrated with a Linear Hall Effect Sensor to measure the mechanism's natural frequency of oscillation.</p>
+
+            <div class="specs-grid">
+                <div class="spec-card">
+                    <h4>Arduino Microcontroller</h4>
+                    <p><strong>Model:</strong> <span class="spec-value">Arduino Uno R3</span></p>
+                    <p><strong>Sample Rate:</strong> <span class="spec-value">9 kHz</span></p>
+                    <p><strong>Resolution:</strong> <span class="spec-value">10-bit ADC</span></p>
+                    <p><strong>Function:</strong> Data acquisition & logging</p>
+                </div>
+
+                <div class="spec-card">
+                    <h4>Linear Hall Effect Sensor</h4>
+                    <p><strong>Model:</strong> <span class="spec-value">Allegro A1324 & A1302</span></p>
+                    <p><strong>Sensitivity:</strong> <span class="spec-value">185 mV/A equivalent</span></p>
+                    <p><strong>Output Range:</strong> <span class="spec-value">0-5V linear</span></p>
+                    <p><strong>Purpose:</strong> Detect magnetic end effector displacement</p>
+                </div>
+
+                <div class="spec-card">
+                    <h4>3D Printed Mechanism Mount</h4>
+                    <p><strong>Material:</strong> <span class="spec-value">PLA thermoplastic</span></p>
+                    <p><strong>Design:</strong> Fixed boundary condition, cantilevered support</p>
+                    <p><strong>Purpose:</strong> Provide rigid mounting for accurate frequency measurement</p>
+                    <p><strong>Design Method:</strong> FDM 3D printing for rapid prototyping</p>
+                </div>
+
+                <div class="spec-card">
+                    <h4>Permanent Magnet End Effector</h4>
+                    <p><strong>Type:</strong> <span class="spec-value">Neodymium N52</span></p>
+                    <p><strong>Dimensions:</strong> <span class="spec-value">12 × 6 × 3 mm</span></p>
+                    <p><strong>Purpose:</strong> Provide inertia for mechanism oscillation</p>
+                    <p><strong>Secondary Use:</strong> Enable future coil interaction</p>
+                </div>
+            </div>
+
+<!-- IMAGE LOCATION #6: Test setup with Arduino and sensors -->
+            <div style="display: flex; gap: 1.5rem; justify-content: center; align-items: flex-start; flex-wrap: wrap;">
+                <div style="display: flex; flex-direction: column; align-items: center;">
+                    <img src="Freq-Test-setup1.png" alt="Complete testing setup with Arduino, Hall Effect sensor, 3D printed mount, and oscillating mechanism" class="section-image"
+                        style="width: 280px; height: 380px; border-radius: 12px; border: 2px solid var(--color-secondary); box-shadow: 0 4px 8px rgba(0,0,0,0.3);";>
+                        <p class="image-caption" style="max-width: 280px; text-align: center;">Figure 1: Frequency Testing Setup</p>
+                </div>
+                <div style="display: flex; flex-direction: column; align-items: center;">
+                     <img src="Freq-Test-setup2.png" alt="Complete testing setup with Arduino, Hall Effect sensor, 3D printed mount, and oscillating mechanism" class="section-image"
+                        style="width: 280px; height: 380px; border-radius: 12px; border: 2px solid var(--color-secondary); box-shadow: 0 4px 8px rgba(0,0,0,0.3);";>
+                        <p class="image-caption" style="max-width: 280px; text-align: center;">
+                            Figure 2: Voltmeter Resting Measurement w/ Linear Hall Effect Sensor
+                        </p>
+                </div>
+                <div style="display: flex; flex-direction: column; align-items: center;">
+                     <img src="Freq-Test-setup3.png" alt="Complete testing setup with Arduino, Hall Effect sensor, 3D printed mount, and oscillating mechanism" class="section-image"
+                        style="width: 280px; height: 380px; border-radius: 12px; border: 2px solid var(--color-secondary); box-shadow: 0 4px 8px rgba(0,0,0,0.3);";>
+                        <p class="image-caption" style="max-width: 280px; text-align: center;">Figure 3: Linear Hall Effect Sensor Holder Bracket</p>
+                </div>
+            </div>
+
+            <h3 class="section-subtitle">Testing Procedure</h3>
+            <p>Each mechanism variant was tested using the following protocol:</p>
+            <ol>
+                <li>Mount mechanism to 3D-printed cantilever fixture with Hall Effect Sensor positioned adjacent to magnet</li>
+                <li>Displace magnet end effector by ~5 mm and release to initiate free oscillation</li>
+                <li>Record Hall Effect Sensor output at 10 kHz for 5 seconds</li>
+                <li>Apply Fast Fourier Transform (FFT) to frequency data to identify dominant frequency</li>
+                <li>Repeat test 5 times and calculate average measured frequency</li>
+                <li>Calculate frequency deviation from analytical prediction</li>
+            </ol>
+
+            <h3 class="section-subtitle">Current Testing Results</h3>
+            <p>Dynamic frequency testing has been completed for four mechanisms. Results show consistent ~10 Hz deviation (lower than predicted) for most mechanisms, except the 80 Hz variant which achieved near-perfect correlation. The systematic offset suggests:</p>
+            <ul>
+                <li>Possible underestimation of damping effects in the analytical model</li>
+                <li>Effective mass greater than calculated (possibly due to mounting structure)</li>
+                <li>Material property variations from nominal aluminum specifications</li>
+                <li>Frequency-dependent behavior of the PRBM model</li>
+            </ul>
+
+            <!-- IMAGE LOCATION #7: FFT data or frequency response plots -->
+            <img src="35Hz Frequency Response.png" alt="FFT plots showing frequency response peaks for different mechanism variants" class="section-image">
+            <p class="image-caption">Figure: FFT analysis results showing dominant frequency peaks for all five mechanism variants</p>
+
+             <img src="35Hz Frequency Runs Comparison.png" alt="Results of Multiple Data Collection Runs" class="section-image">
+            <p class="image-caption">Figure: Results of Multiple Data Collection Runs</p>
+        </section>
+        
+<!-- Static Stiffnes Testing Section -->
+        <section class="section">
+            <h2 class="section-title">Static Stiffness Analysis</h2>
+
+<!-- Images of A25 Hz mechanism being displaced -->
+
+            <div style="display: flex; gap: 1.5rem; justify-content: center; align-items: flex-start; flex-wrap: wrap;">
+                <div style="display: flex; flex-direction: column; align-items: center;">
+                    <img src="static-disp1.png" alt="Complete testing setup with Arduino, Hall Effect sensor, 3D printed mount, and oscillating mechanism" class="section-image"
+                        style="width: 280px; height: 380px; border-radius: 12px; border: 2px solid var(--color-secondary); box-shadow: 0 4px 8px rgba(0,0,0,0.3);";>
+                        <p class="image-caption" style="max-width: 280px; text-align: center;">
+                            Figure 1: A25 Undisplaced Mechanism</p>
+                </div>
+                <div style="display: flex; flex-direction: column; align-items: center;">
+                     <img src="static-disp2.png" alt="Complete testing setup with Arduino, Hall Effect sensor, 3D printed mount, and oscillating mechanism" class="section-image"
+                        style="width: 280px; height: 380px; border-radius: 12px; border: 2px solid var(--color-secondary); box-shadow: 0 4px 8px rgba(0,0,0,0.3);";>
+                        <p class="image-caption" style="max-width: 280px; text-align: center;">
+                            Figure 2: A25 Displaced Mechanism (3450kg)</p>
+                </div>
+            </div>
+            
+            <p>This phase of testing characterized the static force-displacement behavior of each mechanism.</p>
+            <ul>
+                <li><strong>Static Load Testing:</strong> Apply incrementally increasing force to the magnet end effector </li>
+                <li><strong>Displacement Measurement:</strong> Measure end effector displacement using Image Capture System and Displacement Marker</li>
+                <li><strong>Data Collection:</strong> Generate force vs. displacement curves for each mechanism</li>
+                <li><strong>Stiffness Extraction:</strong> Calculate k = ΔF/Δx from linear region of F-D curves</li>
+                <li><strong>Model Refinement:</strong> Compare measured stiffness with analytical predictions to validate/refine PRBM approach</li>
+            </ul>
+            <h3 class="section-subtitle">Testing Procedures</h3>
+            <p>Each mechanism variant was tested using the following protocol: </p>
+            <ol>
+                <li>Glue piece of paper with dashed lines to mount for visualizing displacement</li>
+                <li>Mount mechanism upside down to 3D printed stand with PLA cord attached to mechanism</li>
+                <li>Setup c270 30fps pre-calibrated cameras for image capturing </li>
+                <li>Mount weights on cord attachd to mechanism ranging from 550kg to 3900kg and capture displacement </li>
+                <li>Record data of displacements and forces applied in MATLAB </li>
+                <li>Repeat for mechanisms A35 - 60 and plot data in MATLAB </li>
+                <li>Calculate k = ∆F/∆x for each mechanism and compare</li>
+            </ol>
+            <h3 class="section-subtitle">Results Yielded</h3>
+
+<!-- Graphs of F-D and Experimentally Calc. Stiffnesses -->
+            
+            <div style="display: flex; gap: 1.5rem; justify-content: center; align-items: center; flex-wrap: wrap;">
+                <div style="display: flex; flex-direction: column; align-items: center;">
+                    <img src="F-D-Curves.png" alt="Complete testing setup with Arduino, Hall Effect sensor, 3D printed mount, and oscillating mechanism" class="section-image"
+                        style="object-fit: cover; width: 400px; height: 300px; border-radius: 12px; border: 2px solid var(--color-secondary); box-shadow: 0 4px 8px rgba(0,0,0,0.3);";>
+                        <p class="image-caption" style="max-width: 280px; text-align: center;">
+                            Figure 1: Force vs. Displacement Curves for each Mechanism</p>
+                </div>
+                <div style="display: flex; flex-direction: column; align-items: center;">
+                     <img src="Stiffness-Results.png" alt="Complete testing setup with Arduino, Hall Effect sensor, 3D printed mount, and oscillating mechanism" class="section-image"
+                        style="object-fit: cover; width: 500px; height: 150px; border-radius: 12px; border: 2px solid var(--color-secondary); box-shadow: 0 4px 8px rgba(0,0,0,0.3);";>
+                        <p class="image-caption" style="max-width: 280px; text-align: center;">
+                            Figure 2: Experimentally found Stiffness Values for each Mechanism</p>
+                </div>
+            </div>
+
+<!-- Results Table -->
+            <table>
+                <thead>
+                    <tr>
+                        <th>Analytical Mechanism</th>
+                        <th>Experimental Frequency</th>
+                        <th>Stiffness Calculated</th>
+                        <th>(units)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>A-25</td>
+                        <td>35.8</td>
+                        <td>2806.11</td>
+                        <td>N/m</td>
+                    </tr>
+                    <tr>
+                        <td>A-35</td>
+                        <td>43.5</td>
+                        <td>5479.01</td>
+                        <td>N/m</td>
+                    </tr>
+                    <tr>
+                        <td>A-40</td>
+                        <td>56.5</td>
+                        <td>7507.92</td>
+                        <td>N/m</td>
+                    </tr>
+                    <tr>
+                        <td>A-60</td>
+                        <td>68.7</td>
+                        <td>10588.37</td>
+                        <td>N/m</td>
+                    </tr>
+                </tbody>
+            </table>
+<!-- Static Results Discussion -->
+            <h3 class="section-subtitle">Final Results Discussion</h3>
+            <p> Observing the figures above for the Static Loading Testing it can be seen that the mechanisms follow a linear trend with each of the 
+            respective mechanisms having greater stiffness's as the PRB model predicted. This shows agreeance between the experimental data and the analytical 
+            predictions originally used for manufacturing the devices.</p>
+        </section>
+
+<!-- Damping Coefficient & Energy Capture Section -->
+        <section class="section">
+            <h2 class="section-title">Damping Coefficient & Energy Capture</h2>
+        
+            <!-- Damping Coefficient -->
+            <h3 class="section-subtitle">Damping Coefficient</h3>
+            <p>
+                The electrical damping coefficient was determined using a Data Acquisition (DAQ) system — 
+                specifically the NI‑USB 6001 DAQ produced by National Instruments. The DAQ served as the 
+                motherboard component and required fabrication of a case and a breakout board for data capture, 
+                both 3D printed in-house, with a 34‑pin connector breadboard and ribbon sourced online.
+            </p>
+            <p>
+                Once assembled, the DAQ was connected to the breakout board and then to a rectifier. The 
+                NI‑MAX interface was used to detect the DAQ and configure an analog voltage testing session. 
+                To find the damping coefficient, the system was manually displaced and released while a 
+                specified number of voltage samples were captured, recording the peaks and valleys of the 
+                voltage induced as the permanent magnet oscillated through the coil.
+            </p>
+        
+            <!-- IMAGE PLACEHOLDER 1: DAQ setup / NI-MAX screenshot -->
+            <div style="display: flex; flex-direction: column; align-items: center; margin: 2rem 0;">
+                <img src="DAQ-setup.JPG"
+                     alt="DAQ testing setup"
+                     style="width: 600px; height: auto; border-radius: 12px; border: 2px solid var(--color-secondary); box-shadow: 0 4px 8px rgba(0,0,0,0.3);">
+                <p class="image-caption" style="max-width: 600px;">Figure: DAQ system setup for voltage data capture.</p>
+            </div>
+        
+            <p>
+                Four separate collection runs were taken for the coil voltage, and the peaks and valleys of 
+                each were recorded. These were entered into MATLAB and processed using the built-in log 
+                decrement function to determine the damping ratio. Values across all four runs were averaged, 
+                then the damping ratio was calculated using the equations:
+            </p>
+        
+            <!-- Equations -->
+            <div class="results-box">
+                <h3>Log Decrement & Damping Ratio</h3>
+                <p style="font-family: 'Georgia', serif; font-size: 1.05rem; margin-bottom: 0.5rem;">
+                    δ = ln(x<sub>n</sub> / x<sub>n+1</sub>) = ζω<sub>n</sub>T = 2πζ / √(1 − ζ²) &nbsp;&nbsp;&nbsp; <em>(Eq. 72)</em>
+                </p>
+                <p>
+                    where δ is the log decrement for successive peaks/valleys and ζ is the damping ratio. 
+                    Rearranging for ζ and assuming lightly damped conditions:
+                </p>
+                <p style="font-family: 'Georgia', serif; font-size: 1.05rem;">
+                    ζ = δ / √(4π² + δ²) ≈ δ / 2π &nbsp;&nbsp;&nbsp; <em>(assumed lightly damped, Eq. 73)</em>
+                </p>
+            </div>
+        
+            <p>
+                Using these equations with the given parameters for the stiffness of the specific mechanism 
+                and mass of the system, the log decrement, damping ratio, and damping coefficient of the 
+                analytically predicted 25 Hz mechanism were calculated.
+            </p>
+        
+    <!-- IMAGE PLACEHOLDER 2: Terminal output showing log-dec, damping ratio, damping coefficient results -->
+    <!-- 1st Row -->
+            <div style="display: flex; gap: 1.5rem; justify-content: center; align-items: flex-start; flex-wrap: wrap;">
+                <div style="display: flex; flex-direction: column; align-items: center;">
+                    <img src="DAQ_Vind1.png" class="section-image"
+                        style="object-fit: cover; width: 400px; height: 400px; border-radius: 12px; border: 2px solid var(--color-secondary); box-shadow: 0 4px 8px rgba(0,0,0,0.3);";>
+                        <p class="image-caption" style="max-width: 280px; text-align: center;">
+                            Figure 1: Induced Voltage from Manual Displacement Test 1</p>
+                </div>
+                <div style="display: flex; flex-direction: column; align-items: center;">
+                     <img src="DAQ_Vind2.png" alt="Complete testing setup with Arduino, Hall Effect sensor, 3D printed mount, and oscillating mechanism" class="section-image"
+                        style="object-fit: cover; width: 400px; height: 400px; border-radius: 12px; border: 2px solid var(--color-secondary); box-shadow: 0 4px 8px rgba(0,0,0,0.3);";>
+                        <p class="image-caption" style="max-width: 280px; text-align: center;">
+                            Figure 2: Induced Voltage from Manual Displacement Test 2</p>
+                </div>
+            </div>
+
+      <!-- 2nd Row -->      
+            <div style="display: flex; gap: 1.5rem; justify-content: center; align-items: center; flex-wrap: wrap;">
+                <div style="display: flex; flex-direction: column; align-items: center;">
+                    <img src="DAQ_Vind3.png"
+                         style="object-fit: cover; width: 400px; height: 400px; border-radius: 12px; border: 2px solid var(--color-secondary); box-shadow: 0 4px 8px rgba(0,0,0,0.3);">
+                    <p class="image-caption" style="max-width: 280px;">
+                        Figure 3: Induced Voltage from Manual Displacement Test 3</p>
+                </div>
+                <div style="display: flex; flex-direction: column; align-items: center;">
+                    <img src="Damping-Results.png"
+                         style="object-fit: contain; width: 400px; height: 75px; border-radius: 12px; border: 2px solid var(--color-secondary); box-shadow: 0 4px 8px rgba(0,0,0,0.3);">
+                    <p class="image-caption" style="max-width: 280px;">
+                        Figure 4: MATLAB results showing log-dec avg = 0.6460, damping ratio ζ avg = 0.1028, damping coefficient = 50.6256.</p>
+                </div>
+            </div>
+            
+            <div class="results-box">
+                <h3>Damping Testing Results</h3>
+                <ul>
+                    <li>Log-decrement average: <strong>0.6460</strong></li>
+                    <li>Damping ratio ζ average: <strong>0.1028</strong></li>
+                    <li>Damping coefficient: <strong>50.63 Ns/m</strong></li>
+                    <li>System stiffness: <strong>2806.11 N/m</strong></li>
+                    <li>System mass: <strong>46.3 g</strong></li>
+                </ul>
+                <p style="margin-top: 1rem;">
+                    The average damping ratio of 0.103, paired with the system stiffness (2806.11 N/m) and 
+                    mass (46.3 g), yielded a damping coefficient of 50.63 Ns/m — representing the rate at 
+                    which the system dissipates energy through decay of oscillations.
+                </p>
+            </div>
+
+            <!-- ⚠️ Work In Progress Banner -->
+            <div style="
+                background-color: #1a1a00;
+                border: 2px solid #FFD700;
+                border-left: 6px solid #FFD700;
+                border-radius: 12px;
+                padding: 1.5rem 2rem;
+                margin: 2rem 0;
+                display: flex;
+                align-items: flex-start;
+                gap: 1rem;">
+            
+                <span style="font-size: 2rem; line-height: 1;">⚠️</span>
+            
+                <div>
+                    <p style="color: #FFD700; font-weight: 700; font-size: 1.1rem; margin-bottom: 0.4rem;">
+                        Project In Progress
+                    </p>
+                    <p style="color: #FFE87C; margin-bottom: 0;">
+                        This project is currently ongoing. The sections below reflect work still being 
+                        completed — data collection, analysis, and results are actively being developed. 
+                        This page will be updated as new milestones are reached and findings become 
+                        available. Check back for future updates.
+                    </p>
+                </div>
+            
+            </div>
+            
+            <!-- Energy Capture -->
+            <h3 class="section-subtitle">Energy Capture</h3>
+            <p>
+                <!-- ADD YOUR ENERGY CAPTURE TEXT HERE based on the next pages of your thesis -->
+            </p>
+        
+            <!-- IMAGE PLACEHOLDER 3: Cell voltage from displacement test graph -->
+            <div style="display: flex; flex-direction: column; align-items: center; margin: 2rem 0;">
+                <img src="YOUR-CELL-VOLTAGE-GRAPH.png"
+                     alt="Cell voltage from displacement test"
+                     style="width: 650px; height: auto; border-radius: 12px; border: 2px solid var(--color-secondary); box-shadow: 0 4px 8px rgba(0,0,0,0.3);">
+                <p class="image-caption" style="max-width: 650px;">Figure: Cell voltage from displacement test — peaks and valleys used as data points for damping coefficient calculation.</p>
+            </div>
+        
+            <!-- IMAGE PLACEHOLDER 4: Add any additional energy capture graphs here -->
+            <div style="display: flex; flex-direction: column; align-items: center; margin: 2rem 0;">
+                <img src="YOUR-ENERGY-CAPTURE-GRAPH.png"
+                     alt="Energy capture results"
+                     style="width: 650px; height: auto; border-radius: 12px; border: 2px solid var(--color-secondary); box-shadow: 0 4px 8px rgba(0,0,0,0.3);">
+                <p class="image-caption" style="max-width: 650px;">Figure: Energy Capture Graphs.</p>
+            </div>      
+        </section>
+
+        <!-- Design Parameters -->
+        <section class="section">
+            <h2 class="section-title">Key Technical Parameters</h2>
+            
+            <div class="specs-grid">
+                <div class="spec-card">
+                    <h4>Material Properties</h4>
+                    <p><strong>Material:</strong> <span class="spec-value">Delrin</span></p>
+                    <p><strong>Young's Modulus:</strong> <span class="spec-value">2.9 GPa</span></p>
+                    <p><strong>Density:</strong> <span class="spec-value">1415 kg/m³</span></p>
+                    <p><strong>Yield Strength:</strong> <span class="spec-value"></span></p>
+                </div>
+
+                <div class="spec-card">
+                    <h4>Mechanism Dimensions (Typical)</h4>
+                    <p><strong>Beam Length:</strong> <span class="spec-value">50 mm</span></p>
+                    <p><strong>Beam Width:</strong> <span class="spec-value">6.35 mm</span></p>
+                    <p><strong>Beam Height:</strong> <span class="spec-value">0.5-3 mm (frequency dependent)</span></p>
+                    <p><strong>Magnet Mass:</strong> <span class="spec-value">~2.5 grams</span></p>
+                </div>
+
+                <div class="spec-card">
+                    <h4>Performance Targets</h4>
+                    <p><strong>Frequency Range:</strong> <span class="spec-value">25-80 Hz</span></p>
+                    <p><strong>Oscillation Amplitude:</strong> <span class="spec-value">±5 mm free vibration</span></p>
+                    <p><strong>Quality Factor (Q):</strong> <span class="spec-value">15-25 (damped)</span></p>
+                    <p><strong>Design Life:</strong> <span class="spec-value">10⁷+ cycles (fatigue)</span></p>
+                </div>
+
+                <div class="spec-card">
+                    <h4>Design Standards</h4>
+                    <p><strong>Methodology:</strong> <span class="spec-value">Pseudo Rigid Body Model</span></p>
+                    <p><strong>Reference:</strong> <span class="spec-value">Howell (2001), Sandia Labs</span></p>
+                    <p><strong>Analysis Tool:</strong> <span class="spec-value">MATLAB parametric solver</span></p>
+                    <p><strong>Fabrication:</strong> <span class="spec-value">60W Epilogue laser cutter</span></p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Challenges & Insights -->
+        <section class="section">
+            <h2 class="section-title">Design Challenges & Key Insights</h2>
+            
+            <div class="lesson-card">
+                <h4>Challenge 1: Frequency Prediction Accuracy</h4>
+                <p><strong>Issue:</strong> Initial mechanisms showed ~10 Hz systematic deviation between analytical predictions and experimental measurements across most frequency variants.</p>
+                <p><strong>Root Causes Identified:</strong> Effective mass calculation may not account for mounting structure mass, damping effects not modeled in basic PRBM, material property variations from nominal aluminum specifications.</p>
+                <p><strong>Resolution Path:</strong> Static stiffness testing will provide measured k values, enabling recalculation of effective mass and refinement of the analytical model for future designs.</p>
+            </div>
+
+            <div class="lesson-card">
+                <h4>Challenge 2: High-Frequency Model Accuracy</h4>
+                <p><strong>Observation:</strong> The 80 Hz mechanism achieved exceptional correlation (0.5 Hz deviation), suggesting the analytical model's accuracy improves at higher frequencies.</p>
+                <p><strong>Hypothesis:</strong> At higher frequencies, the influence of viscous damping and system non-idealities is relatively smaller, making the idealized PRBM more accurate. Alternatively, higher stiffness mechanisms may be less sensitive to geometric tolerance variations.</p>
+                <p><strong>Implication:</strong> For future high-frequency designs, confidence in analytical predictions is greater, potentially enabling single-iteration fabrication.</p>
+            </div>
+
+            <div class="lesson-card">
+                <h4>Challenge 3: Parametric Design Automation</h4>
+                <p><strong>Problem:</strong> Iteratively solving nonlinear stiffness equations by hand was error-prone and time-consuming.</p>
+                <p><strong>Solution:</strong> Developed comprehensive MATLAB code implementing Newton-Raphson iteration with automatic convergence checking. This enabled rapid generation of geometry specifications for all six frequency variants simultaneously.</p>
+                <p><strong>Benefit:</strong> Reduced design cycle time from days to hours, enabling exploration of additional frequency variants if needed.</p>
+            </div>
+
+            <div class="lesson-card">
+                <h4>Challenge 4: Magnet-Induced Frequency Shifts</h4>
+                <p><strong>Discovery:</strong> The magnetic field from the neodymium end effector magnet and external Hall Effect Sensor can introduce stiffness coupling.</p>
+                <p><strong>Mitigation Strategy:</strong> Sensor mounted at constant distance from magnet trajectory; future designs may incorporate magnetic shielding if needed.</p>
+                <p><strong>Learning:</strong> Compliant mechanism design in the presence of magnetic fields requires careful consideration of electromechanical coupling effects.</p>
+            </div>
+        </section>
+
+        <!-- Future Work -->
+        <section class="section">
+            <h2 class="section-title">Future Work & Project Roadmap</h2>
+<!--   
+            <h3 class="section-subtitle">Phase 2: Static Characterization (In Progress)</h3>
+            <ul>
+                <li>Force-displacement testing of each mechanism variant (0-10 N range)</li>
+                <li>Calculation of effective mass from measured stiffness and natural frequency</li>
+                <li>Comparison of measured vs. predicted stiffness to refine analytical model</li>
+                <li>Fatigue testing to establish design life under repeated oscillation</li>
+            </ul>
+
+            <h3 class="section-subtitle">Phase 3: Energy Harvesting Integration</h3>
+            <p>Future work will integrate these frequency-tuned mechanisms with electromagnetic energy harvesting systems:</p>
+            <ul>
+                <li><strong>Coil Design & Optimization:</strong> Design multilayer magnet-coil systems around each mechanism variant</li>
+                <li><strong>Train Excitation Testing:</strong> Mount complete systems (mechanism + coil) near railroad tracks and measure voltage/power generation during actual train passages</li>
+                <li><strong>Frequency-Power Correlation:</strong> Determine which frequency variant generates maximum power under realistic train excitation profiles</li>
+                <li><strong>Matching Excitation Bandwidth:</strong> Compare energy output when mechanism frequency closely matches train vibration fundamental frequency vs. off-resonance performance</li>
+            </ul>
+
+            <h3 class="section-subtitle">Phase 4: Bi-Stable Mechanism Design</h3>
+            <p>Advanced future work will explore bi-stable compliant mechanisms that can achieve multiple resonant frequencies:</p>
+            <ul>
+                <li><strong>Concept:</strong> Design mechanism geometry that has two stable equilibrium states (high and low potential energy configurations)</li>
+                <li><strong>Dual-Frequency Operation:</strong> Transition between states based on train velocity, allowing a single device to resonate at two different frequencies optimally</li>
+                <li><strong>Broadband Energy Harvesting:</strong> Capture energy from trains with varying speeds by switching between frequency modes</li>
+                <li><strong>Design Challenge:</strong> Maintaining PRBM analytical tractability while adding bi-stable snap-through behavior</li>
+            </ul>
+        </section>
+ -->
+        <!-- Skills & Competencies -->
+        <section class="section">
+            <h2 class="section-title">Technical Skills Developed</h2>
+            
+            <div class="specs-grid">
+                <div class="spec-card">
+                    <h4>Compliant Mechanism Design</h4>
+                    <p>Pseudo Rigid Body modeling, spring stiffness analysis, frequency-tuned mechanical design</p>
+                </div>
+                <div class="spec-card">
+                    <h4>Mathematical Modeling</h4>
+                    <p>Nonlinear equation solving, iterative numerical methods, natural frequency prediction</p>
+                </div>
+                <div class="spec-card">
+                    <h4>MATLAB Programming</h4>
+                    <p>Parametric design automation, Newton-Raphson iteration, FFT signal processing</p>
+                </div>
+                <div class="spec-card">
+                    <h4>Embedded Electronics</h4>
+                    <p>Arduino development, analog sensor integration, data acquisition and logging</p>
+                </div>
+                <div class="spec-card">
+                    <h4>Experimental Characterization</h4>
+                    <p>Frequency response testing, signal analysis, prototype validation methodology</p>
+                </div>
+                <div class="spec-card">
+                    <h4>Precision Fabrication</h4>
+                    <p>Laser cutting design, 3D printing for assembly fixtures, tolerance optimization</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Conclusion -->
+        <section class="section">
+            <h2 class="section-title">Conclusion & Impact</h2>
+<!--            
+            <p>This project successfully demonstrates the application of compliant mechanism theory to practical energy harvesting challenges. By developing a parametric design methodology based on pseudo rigid body modeling, six frequency-tuned mechanism variants were rapidly designed, fabricated, and experimentally validated.</p>
+            
+            <p>The strong correlation achieved at 80 Hz (0.5 Hz deviation) validates the analytical approach and provides confidence for future high-frequency designs. The systematic frequency offset observed at lower frequencies suggests avenues for model refinement, particularly regarding effective mass accounting and damping characterization.</p>
+
+            <div class="results-box">
+                <h3>Key Achievements</h3>
+                <ul>
+                    <li>✓ Developed parametric MATLAB-based design automation for compliant mechanisms</li>
+                    <li>✓ Fabricated six frequency-tuned mechanisms (25-80 Hz) using laser cutting</li>
+                    <li>✓ Established Arduino-based experimental testing methodology with Hall Effect sensors</li>
+                    <li>✓ Validated pseudo rigid body modeling approach (exceptional accuracy at 80 Hz)</li>
+                    <li>✓ Identified model refinement opportunities through systematic deviation analysis</li>
+                    <li>✓ Created foundation for future energy harvesting integration research</li>
+                </ul>
+            </div>
+
+            <p>The methodology and results serve as a strong foundation for the next phases of this research: static characterization, train-based energy harvesting testing, and ultimately the development of bi-stable mechanisms capable of multi-frequency operation. This work demonstrates how fundamental mechanical engineering principles, combined with computational tools and experimental validation, can be applied to solve real-world renewable energy challenges.</p>
+        </section>
+
+    </div>
+-->
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 Izayah Morris. All rights reserved.</p>
+    </footer>
+</body>
+</html>
