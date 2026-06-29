@@ -11,9 +11,10 @@
             --color-secondary: #31C950;
             --color-text: #7FFFD4;
             --color-text-light: #7FFFD4;
-            --color-bg: #00008B;
+            --color-bg: #f7f6f2;
             --color-surface: #000000;
             --color-border: #000000;
+            --bg-image: url("Dave Floating Background Image.JPG");
         }
 
         * {
@@ -22,12 +23,23 @@
             box-sizing: border-box;
         }
 
-        body {
+        /*body {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
             line-height: 1.6;
             color: var(--color-text);
             background-color: var(--color-bg);
         }
+        */
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            line-height: 1.6;
+            color: var(--color-text);
+            background-color: var(--color-bg);
+            background-image: var(--bg-image);
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
 
         /* Navigation */
         nav {
