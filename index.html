@@ -603,7 +603,41 @@
         </div>
     </section>
 <!--_________________________________________________________________________________________________________________________________________________________________-->
+<!-- Feedback Section -->
+    <section id="feedback" class="section-shell">
+      <h2 class="section-title">Send Feedback</h2>
+      <p class="section-intro">
+        Share feedback, suggestions, or sponsor information with the team.
+      </p>
+    
+      <div class="content-panel">
+        <form
+          action="https://formspree.io/f/YOUR_FORM_ID"
+          method="POST"
+          enctype="multipart/form-data"
+          class="feedback-form"
+        >
+          <label for="name">Name</label>
+          <input type="text" id="name" name="name" required>
+    
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" required>
+    
+          <label for="subject">Subject</label>
+          <input type="text" id="subject" name="subject" required>
+    
+          <label for="message">Feedback</label>
+          <textarea id="message" name="message" rows="6" maxlength="2000" required></textarea>
+    
+          <label for="document">Attach document</label>
+          <input type="file" id="document" name="document" accept=".pdf,.doc,.docx,.txt,.jpg,.png">
+    
+          <button type="submit" class="contact-btn">Submit Feedback</button>
+        </form>
+      </div>
+    </section>
 
+<!--_________________________________________________________________________________________________________________________________________________________________-->
     <footer>
         <p>&copy; 2026 Earhart Racing. Built for the team, the fans, and the people who make race night possible.</p>
     </footer>
